@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chokriii Design · ethereal cyan</title>
+  <style>
+    /* ========== RESET / GLOBAL ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a1115;
+      background-image: 
+        radial-gradient(circle at 15% 20%, #00333b 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #003f48 0%, transparent 40%),
+        radial-gradient(circle at 40% 60%, #02424d 0%, transparent 50%),
+        linear-gradient(145deg, #030d10 0%, #0f262d 100%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: #d0f2f2;
+      font-weight: 300;
+      line-height: 1.4;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    /* floating orbs + advanced grid */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 70px 70px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* glowing animated particles */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(2px 2px at 20% 30%, #0ff, transparent),
+                  radial-gradient(2px 2px at 80% 70%, #0ff, transparent),
+                  radial-gradient(3px 3px at 40% 20%, #aff, transparent),
+                  radial-gradient(2px 2px at 65% 45%, #0ff, transparent),
+                  radial-gradient(4px 4px at 90% 15%, cyan, transparent);
+      background-repeat: no-repeat;
+      filter: blur(1px) brightness(1.5);
+      opacity: 0.3;
+      animation: floatGlow 16s infinite alternate ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes floatGlow {
+      0% { opacity: 0.2; transform: scale(1); }
+      100% { opacity: 0.5; transform: scale(1.02); }
+    }
+
+    .container {
+      max-width: 1500px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* ========== HEADER with best business & stats ========== */
+    .top-brand {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 30, 35, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 255, 255, 0.25);
+      border-radius: 4rem;
+      padding: 1rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+
+    .best-text {
+      font-size: 2.1rem;
+      font-weight: 200;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #b0ffff, #6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px cyan, 0 0 45px #0ff;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 300;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 400;
+      color: white;
+      text-shadow: 0 0 20px cyan;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9ff;
+      opacity: 0.9;
+    }
+
+    .logo-header {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      padding: 1rem 0 0.2rem;
+    }
+
+    .logo-header img {
+      max-width: 90%;
+      height: auto;
+      max-height: 340px;
+      width: auto;
+      filter: brightness(1.15) contrast(1.2) drop-shadow(0 0 40px rgba(0, 255, 255, 0.95));
+      transition: all 0.4s ease;
+    }
+
+    .logo-header img:hover {
+      filter: brightness(1.3) contrast(1.3) drop-shadow(0 0 70px cyan);
+      transform: scale(1.02);
+    }
+
+    .title-rule {
+      width: 220px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, cyan, #aff, cyan, transparent);
+      margin: 0.5rem auto 2.8rem auto;
+      box-shadow: 0 0 35px cyan, 0 0 10px #0ff;
+      border: none;
+    }
+
+    /* ========== GALLERY – 12 SLOTS ========== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0 4rem;
+    }
+
+    .art-card {
+      background: rgba(0, 30, 35, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 255, 255, 0.5);
+      border-bottom-width: 3px;
+      border-right-width: 3px;
+      border-radius: 2.5rem;
+      padding: 1.5rem 1.5rem 2rem;
+      transition: 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .art-card::after {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      border-radius: inherit;
+      background: linear-gradient(125deg, rgba(0,255,255,0.2) 0%, transparent 40%, transparent 60%, rgba(0,255,255,0.2) 100%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    .art-card:hover::after {
+      opacity: 0.6;
+    }
+
+    .art-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: #aff;
+      box-shadow: 0 0 70px #0ff, inset 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+
+    .image-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      background: #03181c;
+      border: 1px solid #0ff;
+      box-shadow: 0 0 30px #0ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.3s;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.3s ease, filter 0.4s;
+    }
+
+    .art-card:hover .image-frame {
+      box-shadow: 0 0 50px cyan, inset 0 0 15px #aff;
+    }
+
+    .art-card:hover .image-frame img {
+      transform: scale(1.04);
+      filter: brightness(1.1) drop-shadow(0 0 10px cyan);
+    }
+
+    .art-title {
+      margin-top: 1.2rem;
+      font-size: 1.25rem;
+      font-weight: 330;
+      color: #e3ffff;
+      text-shadow: 0 0 12px cyan, 0 0 25px #0ff;
+      border-left: 4px solid #0ff;
+      padding-left: 1rem;
+      background: linear-gradient(90deg, rgba(0,255,255,0.15), transparent);
+      letter-spacing: 0.5px;
+    }
+
+    .art-meta {
+      font-size: 0.7rem;
+      font-family: 'Inter', monospace;
+      color: #9ff;
+      margin-top: 0.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    /* ========== FOOTER with extra stats ========== */
+    .footer {
+      margin-top: 5rem;
+      padding: 2rem 1.8rem;
+      border-top: 1px solid rgba(0, 255, 255, 0.4);
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 8px;
+      color: #b6ffff;
+      font-weight: 200;
+      text-shadow: 0 0 20px cyan;
+      background: rgba(0, 25, 30, 0.2);
+      backdrop-filter: blur(6px);
+      border-radius: 60px 60px 20px 20px;
+    }
+
+    .footer span {
+      opacity: 1;
+      font-weight: 300;
+    }
+
+    .footer-small {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      color: #6cc;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    /* responsive */
+    @media (max-width: 680px) {
+      .top-brand {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+      .stats {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .best-text {
+        font-size: 1.6rem;
+        letter-spacing: 4px;
+      }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+  <!-- ========== BEST LOGO BUSINESS + STATS ========== -->
+  <div class="top-brand">
+    <div class="best-text">✧ BEST LOGO BUSINESS ✧</div>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">47+</span>
+        <span class="stat-label">clients</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">6 yrs</span>
+        <span class="stat-label">experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">satisfaction</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== YOUR LOGO ========== -->
+  <div class="logo-header">
+    <img src="https://i.ibb.co/x8rdmMRV/Chat-GPT-Image-5-mars-2026-00-05-10.png" alt="Chokriii Design Logo">
+  </div>
+  <div class="title-rule"></div>
+
+  <!-- ========== GALLERY WITH 12 SLOTS (+4 new) ========== -->
+  <div class="gallery">
+
+    <!-- Card 1 – Leecher Banned GIF -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/TMb7GLQF/Animation.gif" alt="LEECHER BANNED animation">
+      </div>
+      <div class="art-title">LEECHER BANNED</div>
+      <div class="art-meta">GIF · loop</div>
+    </div>
+
+    <!-- Card 2 – Shop/Service Logo -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/x8rdmMRV/Chat-GPT-Image-5-mars-2026-00-05-10.png" alt="SHOP LOGO">
+      </div>
+      <div class="art-title">SERVICE LOGO</div>
+      <div class="art-meta">PNG</div>
+    </div>
+
+    <!-- Card 3 – Sig for Sale GIF -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/1W40n9D/Animation.gif" alt="SIG SALE animation">
+      </div>
+      <div class="art-title">SIG FOR SALE</div>
+      <div class="art-meta">GIF · loop</div>
+    </div>
+
+    <!-- Card 4 – Service Signature GIF -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/GQfwzDc2/Animation.gif" alt="SIG SERVICE animation">
+      </div>
+      <div class="art-title">SERVICE SIGNATURE</div>
+      <div class="art-meta">GIF · loop</div>
+    </div>
+
+    <!-- Card 5 – LEAK LOGO (placeholder) -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/VpgNgPVd/Chat-GPT-Image-5-mars-2026-00-25-55.png" alt="LEAK LOGO">
+      </div>
+      <div class="art-title">LEAK LOGO</div>
+      <div class="art-meta">PNG / GIF</div>
+    </div>
+
+    <!-- Card 6 – PYTHON DEV -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/KkKrctp/Chat-GPT-Image-5-mars-2026-00-51-47.png" alt="PYTHON DEV">
+      </div>
+      <div class="art-title">PYTHON DEV</div>
+      <div class="art-meta">PNG / GIF</div>
+    </div>
+
+    <!-- Card 7 – PROXY BUSINESS LOGO -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/Dywm28D/Chat-GPT-Image-5-mars-2026-03-32-43.png" alt="PROXY LOGO">
+      </div>
+      <div class="art-title">PROXY BUSINESS LOGO</div>
+      <div class="art-meta">PNG / GIF</div>
+    </div>
+
+    <!-- Card 8 – PHOTOSHOP BUSINESS LOGO -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/vCMzZ5mH/Chat-GPT-Image-5-mars-2026-03-27-54.png" alt="PHOTOSHOP LOGO">
+      </div>
+      <div class="art-title">PHOTOSHOP BUSINESS</div>
+      <div class="art-meta">PNG / GIF</div>
+    </div>
+
+    <!-- Card 9 – NEW SLOT 1 (ethereal blank with abstract design hint) -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/jkNypvNw/AZy72-Vtam9i-Rcw-QL46b8-A-AZy72-Vta-p-FKAubm0-EZZ2g-ezgif-com-video-to-gif-converter.gif" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=DESIGN+SLOT+9'">
+      </div>
+      <div class="art-title">PROXY BANNER</div>
+      <div class="art-meta">coming · PNG</div>
+    </div>
+
+    <!-- Card 10 – NEW SLOT 2 -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/6cywF5nH/Chat-GPT-Image-5-mars-2026-04-03-07.png" alt="CYAN WAVE" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=DESIGN+SLOT+10'">
+      </div>
+      <div class="art-title">CRYPTO BUSINESS</div>
+      <div class="art-meta">concept · GIF</div>
+    </div>
+
+    <!-- Card 11 – NEW SLOT 3 -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/Y4Q3m3w8/Chat-GPT-Image-5-mars-2026-04-07-04.png" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=DESIGN+SLOT+11'">
+      </div>
+      <div class="art-title">GIFTCARDS BUSINESS</div>
+      <div class="art-meta">PNG · limited</div>
+    </div>
+
+    <!-- Card 12 – NEW SLOT 4 -->
+    <div class="art-card">
+      <div class="image-frame">
+        <img src="https://i.ibb.co/3y0rdKz2/Chat-GPT-Image-5-mars-2026-04-14-48.png" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=DESIGN+SLOT+12'">
+      </div>
+      <div class="art-title">REAL ART BUSINESS</div>
+      <div class="art-meta">GIF · loop</div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <div class="footer">
+    <span>CHOKRII DESIGN</span>
+    <div class="footer-small">
+      <span>✦ 6+ years excellence ✦</span>
+      <span>✦ 47 happy clients ✦</span>
+      <span>✦ 100% satisfaction ✦</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
