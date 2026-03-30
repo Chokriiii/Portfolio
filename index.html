@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chokriii · 20 slots · ethereal cyan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ChoDesign · Golden Ratio Portfolio — Logos & Animated Signatures</title>
+  <!-- Google Fonts: Refined serif + sans for luxury -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ========== RESET / GLOBAL ========== */
     * {
       margin: 0;
       padding: 0;
@@ -13,525 +16,562 @@
     }
 
     body {
-      background: #0a1115;
+      background: #0a0806;
       background-image: 
-        radial-gradient(circle at 15% 20%, #00333b 0%, transparent 35%),
-        radial-gradient(circle at 85% 80%, #003f48 0%, transparent 40%),
-        radial-gradient(circle at 40% 60%, #02424d 0%, transparent 50%),
-        linear-gradient(145deg, #030d10 0%, #0f262d 100%);
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      color: #d0f2f2;
-      font-weight: 300;
-      line-height: 1.4;
-      min-height: 100vh;
-      padding: 2rem 1.5rem;
-      position: relative;
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 60%),
+        repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.01) 0px, rgba(212, 175, 55, 0.01) 2px, transparent 2px, transparent 8px);
+      font-family: 'Inter', sans-serif;
+      color: #ece3d0;
+      line-height: 1.5;
+      scroll-behavior: smooth;
     }
 
-    /* floating orbs + advanced grid */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: 
-        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 70px 70px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* glowing animated particles */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(2px 2px at 20% 30%, #0ff, transparent),
-                  radial-gradient(2px 2px at 80% 70%, #0ff, transparent),
-                  radial-gradient(3px 3px at 40% 20%, #aff, transparent),
-                  radial-gradient(2px 2px at 65% 45%, #0ff, transparent),
-                  radial-gradient(4px 4px at 90% 15%, cyan, transparent);
-      background-repeat: no-repeat;
-      filter: blur(1px) brightness(1.5);
-      opacity: 0.3;
-      animation: floatGlow 16s infinite alternate ease-in-out;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    @keyframes floatGlow {
-      0% { opacity: 0.2; transform: scale(1); }
-      100% { opacity: 0.5; transform: scale(1.02); }
-    }
+    /* custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1a1612; }
+    ::-webkit-scrollbar-thumb { background: #c9a03d; border-radius: 10px; }
 
     .container {
-      max-width: 1500px;
+      max-width: 1600px;
       margin: 0 auto;
+      padding: 2rem 2rem 4rem;
       position: relative;
-      z-index: 10;
+      z-index: 2;
     }
 
-    /* ========== HEADER with best business & stats ========== */
-    .top-brand {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 30, 35, 0.3);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(0, 255, 255, 0.25);
-      border-radius: 4rem;
-      padding: 1rem 2.5rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.1);
-    }
-
-    .best-text {
-      font-size: 2.1rem;
-      font-weight: 200;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, #b0ffff, #6ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 25px cyan, 0 0 45px #0ff;
-    }
-
-    .stats {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-weight: 300;
-    }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 400;
-      color: white;
-      text-shadow: 0 0 20px cyan;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #9ff;
-      opacity: 0.9;
-    }
-
-    .logo-header {
-      text-align: center;
-      margin-bottom: 0.5rem;
-      padding: 1rem 0 0.2rem;
-    }
-
-    .logo-header img {
-      max-width: 90%;
-      height: auto;
-      max-height: 340px;
-      width: auto;
-      filter: brightness(1.15) contrast(1.2) drop-shadow(0 0 40px rgba(0, 255, 255, 0.95));
-      transition: all 0.4s ease;
-    }
-
-    .logo-header img:hover {
-      filter: brightness(1.3) contrast(1.3) drop-shadow(0 0 70px cyan);
-      transform: scale(1.02);
-    }
-
-    .title-rule {
-      width: 220px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, cyan, #aff, cyan, transparent);
-      margin: 0.5rem auto 2.8rem auto;
-      box-shadow: 0 0 35px cyan, 0 0 10px #0ff;
-      border: none;
-    }
-
-    /* ========== GALLERY – 20 SLOTS ========== */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0 4rem;
-    }
-
-    .art-card {
-      background: rgba(0, 30, 35, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(0, 255, 255, 0.5);
-      border-bottom-width: 3px;
-      border-right-width: 3px;
-      border-radius: 2.5rem;
-      padding: 1.5rem 1.5rem 2rem;
-      transition: 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.1);
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .art-card::after {
-      content: '';
-      position: absolute;
-      top: -2px; left: -2px; right: -2px; bottom: -2px;
-      border-radius: inherit;
-      background: linear-gradient(125deg, rgba(0,255,255,0.2) 0%, transparent 40%, transparent 60%, rgba(0,255,255,0.2) 100%);
-      opacity: 0;
-      transition: opacity 0.5s;
-      pointer-events: none;
-    }
-
-    .art-card:hover::after {
-      opacity: 0.6;
-    }
-
-    .art-card:hover {
-      transform: translateY(-8px) scale(1.01);
-      border-color: #aff;
-      box-shadow: 0 0 70px #0ff, inset 0 0 30px rgba(0, 255, 255, 0.3);
-    }
-
-    .image-frame {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      border-radius: 1.8rem;
-      overflow: hidden;
-      background: #03181c;
-      border: 1px solid #0ff;
-      box-shadow: 0 0 30px #0ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: box-shadow 0.3s;
-    }
-
-    .image-frame img {
+    /* animated gold grain overlay */
+    .gold-dust {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      display: block;
-      transition: transform 0.3s ease, filter 0.4s;
+      pointer-events: none;
+      background-image: radial-gradient(2px 2px at 15% 40%, rgba(212,175,55,0.3), transparent),
+                        radial-gradient(1px 1px at 75% 85%, rgba(212,175,55,0.4), transparent),
+                        radial-gradient(3px 3px at 45% 20%, rgba(212,175,55,0.2), transparent);
+      background-repeat: no-repeat;
+      opacity: 0.6;
+      z-index: 0;
+      animation: floatGold 20s infinite alternate;
     }
 
-    .art-card:hover .image-frame {
-      box-shadow: 0 0 50px cyan, inset 0 0 15px #aff;
+    @keyframes floatGold {
+      0% { opacity: 0.3; transform: scale(1); }
+      100% { opacity: 0.7; transform: scale(1.02); }
     }
 
-    .art-card:hover .image-frame img {
-      transform: scale(1.04);
-      filter: brightness(1.1) drop-shadow(0 0 10px cyan);
-    }
-
-    .art-title {
-      margin-top: 1.2rem;
-      font-size: 1.25rem;
-      font-weight: 330;
-      color: #e3ffff;
-      text-shadow: 0 0 12px cyan, 0 0 25px #0ff;
-      border-left: 4px solid #0ff;
-      padding-left: 1rem;
-      background: linear-gradient(90deg, rgba(0,255,255,0.15), transparent);
-      letter-spacing: 0.5px;
-    }
-
-    .art-meta {
-      font-size: 0.7rem;
-      font-family: 'Inter', monospace;
-      color: #9ff;
-      margin-top: 0.5rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.9;
-    }
-
-    /* ========== FOOTER with extra stats ========== */
-    .footer {
-      margin-top: 5rem;
-      padding: 2rem 1.8rem;
-      border-top: 1px solid rgba(0, 255, 255, 0.4);
-      text-align: center;
-      font-size: 1.3rem;
-      letter-spacing: 8px;
-      color: #b6ffff;
-      font-weight: 200;
-      text-shadow: 0 0 20px cyan;
-      background: rgba(0, 25, 30, 0.2);
-      backdrop-filter: blur(6px);
-      border-radius: 60px 60px 20px 20px;
-    }
-
-    .footer span {
-      opacity: 1;
-      font-weight: 300;
-    }
-
-    .footer-small {
-      margin-top: 0.8rem;
-      font-size: 0.8rem;
-      letter-spacing: 4px;
-      color: #6cc;
+    /* header luxury */
+    .top-header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+      position: relative;
+    }
+    .top-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, #e4bc6e, transparent);
+    }
+
+    .brand h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #f5e2b0, #c9a03d, #e8cf8a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 0 20px rgba(212,175,55,0.2);
+    }
+    .brand .tag {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c9aa5b;
+      font-weight: 300;
+      word-spacing: 4px;
+    }
+
+    .stats-mini {
+      display: flex;
       gap: 2.5rem;
     }
+    .stat-pill {
+      text-align: right;
+      position: relative;
+    }
+    .stat-pill .number {
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: #e9c97c;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+      text-shadow: 0 0 8px rgba(212,175,55,0.4);
+    }
+    .stat-pill .label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #b4945a;
+    }
 
-    /* responsive */
-    @media (max-width: 680px) {
-      .top-brand {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-      }
-      .stats {
-        gap: 1.2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .best-text {
-        font-size: 1.6rem;
-        letter-spacing: 4px;
-      }
+    /* logo showcase with ornate border */
+    .logo-showcase {
+      text-align: center;
+      margin: 1.2rem 0 2.5rem;
+    }
+    .master-logo {
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(10, 8, 6, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 100px;
+      padding: 0.8rem 2rem;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+      transition: all 0.4s ease;
+    }
+    .master-logo:hover {
+      box-shadow: 0 15px 45px rgba(0,0,0,0.6), 0 0 35px rgba(212, 175, 55, 0.5);
+      border-color: #f3d27a;
+    }
+    .master-logo img {
+      max-width: 100%;
+      height: auto;
+      max-height: 100px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));
+    }
+
+    /* navigation with gold leaf */
+    .segment-nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0 2.8rem;
+    }
+    .seg-btn {
+      background: rgba(15, 12, 10, 0.8);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      padding: 0.9rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      color: #e9d4a5;
+      cursor: pointer;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      letter-spacing: 0.5px;
+    }
+    .seg-btn i { font-size: 1.2rem; color: #dbb65c; transition: 0.2s; }
+    .seg-btn.active {
+      background: linear-gradient(135deg, #c9a03d, #b8862c);
+      border-color: #f5d98f;
+      color: #0c0a06;
+      box-shadow: 0 10px 25px rgba(185, 135, 45, 0.5);
+    }
+    .seg-btn.active i { color: #2c2418; }
+    .seg-btn:hover:not(.active) {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: #e4bc6e;
+      transform: translateY(-3px);
+    }
+
+    /* gallery grid — refined cards */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 2rem;
+      margin-top: 0.8rem;
+    }
+    .portfolio-card {
+      background: rgba(18, 15, 12, 0.75);
+      backdrop-filter: blur(4px);
+      border-radius: 36px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .portfolio-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 36px;
+      padding: 1px;
+      background: linear-gradient(125deg, rgba(212,175,55,0.3), transparent 40%, transparent 70%, rgba(212,175,55,0.2));
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .portfolio-card:hover::before { opacity: 1; }
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 175, 55, 0.7);
+      box-shadow: 0 30px 45px -12px rgba(0,0,0,0.6), 0 0 0 1px rgba(212, 175, 55, 0.3);
+    }
+    .card-media {
+      aspect-ratio: 4 / 3;
+      background: #0e0b08;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-media img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease, filter 0.4s;
+      filter: brightness(0.98);
+    }
+    .portfolio-card:hover .card-media img {
+      transform: scale(1.04);
+      filter: brightness(1.05) drop-shadow(0 0 8px rgba(212,175,55,0.3));
+    }
+    .card-info {
+      padding: 1.3rem 1.6rem 1.8rem;
+      background: linear-gradient(0deg, rgba(0,0,0,0.2), transparent);
+    }
+    .card-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #f3e2b5;
+      letter-spacing: -0.2px;
+      margin-bottom: 0.4rem;
+    }
+    .card-category {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #c9a03d;
+      background: rgba(212, 175, 55, 0.12);
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Empty slots — elegant placeholder design */
+    .portfolio-card.empty-slot {
+      background: rgba(10, 8, 6, 0.6);
+      border: 1px dashed rgba(212, 175, 55, 0.55);
+      backdrop-filter: blur(2px);
+      transition: all 0.3s;
+      cursor: default;
+    }
+    .empty-slot .card-media {
+      background: #0f0c09;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .empty-icon {
+      font-size: 2.8rem;
+      color: #c9a03d;
+      opacity: 0.7;
+      text-shadow: 0 0 8px rgba(212,175,55,0.3);
+      transition: 0.2s;
+    }
+    .empty-slot:hover .empty-icon {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    .empty-slot p {
+      font-size: 0.85rem;
+      color: #dbbc7c;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    .empty-badge {
+      font-size: 0.65rem;
+      background: rgba(212, 175, 55, 0.2);
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      color: #e7c880;
+    }
+    .empty-slot .card-info h3 {
+      color: #dbbd7a;
+      font-weight: 500;
+    }
+
+    /* section header with gold accent */
+    .section-header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+      border-left: 3px solid #c9a03d;
+      padding-left: 1.2rem;
+    }
+    .section-header-wrapper h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.8rem;
+      color: #e9d2a3;
+      letter-spacing: -0.2px;
+    }
+    .section-header-wrapper h2 i {
+      color: #dbb45c;
+      margin-right: 10px;
+    }
+    .slot-counter {
+      font-size: 0.8rem;
+      background: rgba(212, 175, 55, 0.2);
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      color: #e4c686;
+      font-weight: 400;
+    }
+
+    /* footer premium */
+    .footer-premium {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: #b6985a;
+    }
+    .badges span i {
+      margin-right: 8px;
+      color: #e4bc6e;
+    }
+    @media (max-width: 760px) {
+      .container { padding: 1.2rem; }
+      .segment-nav { gap: 1rem; flex-wrap: wrap; }
+      .seg-btn { padding: 0.6rem 1.4rem; font-size: 0.85rem; }
+      .brand h1 { font-size: 2.2rem; }
+      .stats-mini { gap: 1rem; }
     }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="gold-dust"></div>
 <div class="container">
-
-  <!-- ========== BEST LOGO BUSINESS + STATS ========== -->
-  <div class="top-brand">
-    <div class="best-text">✧ BEST LOGO BUSINESS ✧</div>
-    <div class="stats">
-      <div class="stat-item">
-        <span class="stat-number">47+</span>
-        <span class="stat-label">clients</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">6 yrs</span>
-        <span class="stat-label">experience</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">100%</span>
-        <span class="stat-label">satisfaction</span>
-      </div>
+  <!-- header -->
+  <div class="top-header">
+    <div class="brand">
+      <h1>ChoDesign · <span style="background: linear-gradient(135deg,#f3e0a0,#c9a03d); -webkit-background-clip:text; background-clip:text; color:transparent;">Golden Atelier</span></h1>
+      <div class="tag">✦ BESPOKE LOGOS · ANIMATED SIGNATURES · GILDED CRAFT ✦</div>
+    </div>
+    <div class="stats-mini">
+      <div class="stat-pill"><div class="number">52+</div><div class="label">Masterpieces</div></div>
+      <div class="stat-pill"><div class="number">6 yrs</div><div class="label">Artisan</div></div>
+      <div class="stat-pill"><div class="number">∞</div><div class="label">Elegance</div></div>
     </div>
   </div>
 
-  <!-- ========== YOUR LOGO ========== -->
-  <div class="logo-header">
-    <img src="https://i.ibb.co/x8rdmMRV/Chat-GPT-Image-5-mars-2026-00-05-10.png" alt="Chokriii Design Logo">
-  </div>
-  <div class="title-rule"></div>
-
-  <!-- ========== GALLERY – 20 DESIGNS (organised: animated first, then static logos) ========== -->
-  <div class="gallery">
-
-    <!-- ★ GROUP 1 – ANIMATED / GIF SLOTS (more dynamic for client appeal) ★ -->
-    <!-- Card 1 – Leecher Banned GIF (animated) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/TMb7GLQF/Animation.gif" alt="LEECHER BANNED animation">
-      </div>
-      <div class="art-title">LEECHER BANNED</div>
-      <div class="art-meta">GIF 4K loop</div>
-    </div>
-
-    <!-- Card 2 – Service Signature GIF (animated) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/GQfwzDc2/Animation.gif" alt="SIG SERVICE animation">
-      </div>
-      <div class="art-title">SERVICE SIGNATURE</div>
-      <div class="art-meta">GIF 4K LOOP</div>
-    </div>
-
-    <!-- Card 3 – PROXY BANNER (animated GIF) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/jkNypvNw/AZy72-Vtam9i-Rcw-QL46b8-A-AZy72-Vta-p-FKAubm0-EZZ2g-ezgif-com-video-to-gif-converter.gif" alt="PROXY BANNER">
-      </div>
-      <div class="art-title">PROXY BANNER</div>
-      <div class="art-meta">SIGNATURE</div>
-    </div>
-
-    <!-- Card 4 – CHODESIGN (animated GIF) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/VYmL6fYn/animation.gif" alt="CHODESIGN">
-      </div>
-      <div class="art-title">CHODESIGN</div>
-      <div class="art-meta">GIF 4K LOOP</div>
-    </div>
-
-    <!-- Card 5 – Sig for Sale GIF (static but originally shown as GIF) - keep as static but under animated group? It's a png, but we'll keep flow -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/hxJwssPS/Chat-GPT-Image-7-mars-2026-02-47-21.png" alt="SIG SALE">
-      </div>
-      <div class="art-title">DISCHUNTER</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- ★ GROUP 2 – STATIC BUSINESS LOGOS (cohesive brand presentation) ★ -->
-
-    <!-- Card 6 – Shop/Service Logo -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/x8rdmMRV/Chat-GPT-Image-5-mars-2026-00-05-10.png" alt="SHOP LOGO">
-      </div>
-      <div class="art-title">SERVICE LOGO</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 7 – LEAK LOGO (SORA BUSINESS) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/TsmV7nc/Chat-GPT-Image-10-mars-2026-03-16-45.png" alt="LEAK LOGO">
-      </div>
-      <div class="art-title">SORA BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 8 – PYTHON DEV -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/KkKrctp/Chat-GPT-Image-5-mars-2026-00-51-47.png" alt="PYTHON DEV">
-      </div>
-      <div class="art-title">PYTHON DEV</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 9 – PROXY BUSINESS LOGO -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/Dywm28D/Chat-GPT-Image-5-mars-2026-03-32-43.png" alt="PROXY LOGO">
-      </div>
-      <div class="art-title">PROXY BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 10 – PHOTOSHOP BUSINESS LOGO -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/vCMzZ5mH/Chat-GPT-Image-5-mars-2026-03-27-54.png" alt="PHOTOSHOP LOGO">
-      </div>
-      <div class="art-title">PHOTOSHOP BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 11 – CRYPTO BUSINESS -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/6cywF5nH/Chat-GPT-Image-5-mars-2026-04-03-07.png" alt="CYAN WAVE">
-      </div>
-      <div class="art-title">CRYPTO BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 12 – GIFTCARDS BUSINESS -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/Y4Q3m3w8/Chat-GPT-Image-5-mars-2026-04-07-04.png" alt="GIFTCARDS DESIGN">
-      </div>
-      <div class="art-title">GIFTCARDS BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 13 – REAL ART BUSINESS -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/3y0rdKz2/Chat-GPT-Image-5-mars-2026-04-14-48.png" alt="REAL ART BUSINESS">
-      </div>
-      <div class="art-title">REAL ART BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 14 – GAT BUSINESS -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/k654Wfct/Chat-GPT-Image-7-mars-2026-01-00-56.png" alt="GAT BUSINESS">
-      </div>
-      <div class="art-title">GAT BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 15 – DRXBET BUSINESS -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/M5g5gRZ4/Bitcoin-et-poker-l-univers-DRXBET.png" alt="DRXBET BUSINESS">
-      </div>
-      <div class="art-title">DRXBET BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 16 – MUSIC KING -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/HsXQv9Z/Chat-GPT-Image-7-mars-2026-01-25-46.png" alt="MUSIC KING">
-      </div>
-      <div class="art-title">MUSIC KING</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 17 – NEBULA SIGNATURE (BlackHeart Business) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.imgur.com/QfHhfZ2.png" alt="NEBULA SIGNATURE" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=NEBULA+SIG'">
-      </div>
-      <div class="art-title">BlackHeart Business</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 18 – CYBERPUNK IDENTITY (SIX DIAMONDS) — FIXED unclosed tag -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/TxSfSdY9/Chat-GPT-Image-8-mars-2026-06-23-31.png" alt="CYBERPUNK ID" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=CYBERPUNK'">
-      </div>
-      <div class="art-title">SIX DIAMONDS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 19 – HOLO DROP (CULTEX BUSINESS) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/bj7QLdNv/Chat-GPT-Image-7-mars-2026-22-37-06.png" alt="HOLO DROP" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=HOLO+DROP'">
-      </div>
-      <div class="art-title">CULTEX BUSINESS</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-
-    <!-- Card 20 – AETHER STUDIO (TrustProxies Business) -->
-    <div class="art-card">
-      <div class="image-frame">
-        <img src="https://i.ibb.co/hFdRS9fC/Untitled-design-2.png" alt="AETHER STUDIO" onerror="this.src='https://via.placeholder.com/400x300/0a2a30/0ff?text=AETHER'">
-      </div>
-      <div class="art-title">TrustProxies Business</div>
-      <div class="art-meta">LOGO</div>
-    </div>
-  </div> <!-- end gallery (20 organised slots) -->
-
-  <!-- ========== FOOTER ========== -->
-  <div class="footer">
-    <span>CHODESIGN BUSINESS</span>
-    <div class="footer-small">
-      <span>✦ 6+ years excellence ✦</span>
-      <span>✦ 47 happy clients ✦</span>
-      <span>✦ 100% satisfaction ✦</span>
+  <!-- master logo -->
+  <div class="logo-showcase">
+    <div class="master-logo">
+      <img src="https://i.ibb.co/B273QykQ/Votre-texte-de-paragraphe.png" alt="Chokriii Core Signature">
     </div>
   </div>
 
-</div> <!-- end container -->
+  <!-- segment navigation -->
+  <div class="segment-nav">
+    <button class="seg-btn active" id="btnLogos"><i class="fas fa-crown"></i> <span>Master Logos</span></button>
+    <button class="seg-btn" id="btnSignatures"><i class="fas fa-gem"></i> <span>Animated GIF Signatures</span></button>
+  </div>
+
+  <!-- dynamic header & gallery -->
+  <div class="section-header-wrapper" id="sectionHeader">
+    <h2 id="sectionTitle"><i class="fas fa-palette"></i> Logo Collection</h2>
+    <div class="slot-counter" id="slotCounter"></div>
+  </div>
+  <div id="galleryContainer" class="gallery-grid"></div>
+
+  <div class="footer-premium">
+    <div>© 2026 CHODESIGN BUSINESS — where identity meets golden precision</div>
+    <div class="badges"><span><i class="fas fa-trophy"></i> 100% bespoke</span><span><i class="fas fa-film"></i> motion signatures</span><span><i class="fas fa-feather-alt"></i> artisan quality</span></div>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  // PREMIUM COLLECTIONS: original assets + 
+  // +5 EMPTY LOGO SLOTS + +3 EMPTY ANIMATED GIF SLOTS
+  // You can paste image/GIF URLs directly in the arrays below.
+  // ============================================================
+
+  // ---------- LOGOS (15 existing + 5 empty ready-to-fill slots) ----------
+  let logosArray = [
+    { title: "SERVICE LOGO", category: "brand mark", imgSrc: "https://i.ibb.co/x8rdmMRV/Chat-GPT-Image-5-mars-2026-00-05-10.png" },
+    { title: "SORA BUSINESS", category: "corporate", imgSrc: "https://i.ibb.co/TsmV7nc/Chat-GPT-Image-10-mars-2026-03-16-45.png" },
+    { title: "PYTHON DEV", category: "tech identity", imgSrc: "https://i.ibb.co/KkKrctp/Chat-GPT-Image-5-mars-2026-00-51-47.png" },
+    { title: "PROXY BUSINESS", category: "network brand", imgSrc: "https://i.ibb.co/Dywm28D/Chat-GPT-Image-5-mars-2026-03-32-43.png" },
+    { title: "PHOTOSHOP BUSINESS", category: "creative suite", imgSrc: "https://i.ibb.co/vCMzZ5mH/Chat-GPT-Image-5-mars-2026-03-27-54.png" },
+    { title: "CRYPTO BUSINESS", category: "web3", imgSrc: "https://i.ibb.co/6cywF5nH/Chat-GPT-Image-5-mars-2026-04-03-07.png" },
+    { title: "GIFTCARDS BUSINESS", category: "lifestyle", imgSrc: "https://i.ibb.co/Y4Q3m3w8/Chat-GPT-Image-5-mars-2026-04-07-04.png" },
+    { title: "REAL ART BUSINESS", category: "collectible", imgSrc: "https://i.ibb.co/3y0rdKz2/Chat-GPT-Image-5-mars-2026-04-14-48.png" },
+    { title: "GAT BUSINESS", category: "signature style", imgSrc: "https://i.ibb.co/k654Wfct/Chat-GPT-Image-7-mars-2026-01-00-56.png" },
+    { title: "DRXBET BUSINESS", category: "gaming & betting", imgSrc: "https://i.ibb.co/M5g5gRZ4/Bitcoin-et-poker-l-univers-DRXBET.png" },
+    { title: "MUSIC KING", category: "entertainment", imgSrc: "https://i.ibb.co/HsXQv9Z/Chat-GPT-Image-7-mars-2026-01-25-46.png" },
+    { title: "BlackHeart Business", category: "edgy signature", imgSrc: "https://i.imgur.com/QfHhfZ2.png", fallback: "https://via.placeholder.com/400x300/2c2418/e4bc6e?text=BlackHeart" },
+    { title: "SIX DIAMONDS", category: "luxury identity", imgSrc: "https://i.ibb.co/TxSfSdY9/Chat-GPT-Image-8-mars-2026-06-23-31.png" },
+    { title: "CULTEX BUSINESS", category: "holographic", imgSrc: "https://i.ibb.co/bj7QLdNv/Chat-GPT-Image-7-mars-2026-22-37-06.png" },
+    { title: "TrustProxies Business", category: "cyber trust", imgSrc: "https://i.ibb.co/hFdRS9fC/Untitled-design-2.png" }
+  ];
+
+  const emptyLogos = [
+    { title: "ExoraHost LOGO", category: "VPN", imgSrc: "https://i.ibb.co/mCx28c1J/Chat-GPT-Image-29-mars-2026-13-54-19.png" },
+    { title: "ChoDesign LOGO", category: "elegant", imgSrc: "https://i.ibb.co/B273QykQ/Votre-texte-de-paragraphe.png" },
+    { title: "Odesa LOGO", category: "PREMIUM", imgSrc: "https://i.ibb.co/WWWMbp4t/Chat-GPT-Image-28-mars-2026-18-10-50.png" },
+    { title: "Cygo LOGO", category: "PREMIUM", imgSrc: "https://i.ibb.co/wrbydsyV/Chat-GPT-Image-25-mars-2026-21-04-44.png" },
+    { title: "Kinder LOGO", category: "CHOCOLATE", imgSrc: "https://i.ibb.co/39J7pFS9/Chat-GPT-Image-13-mars-2026-09-36-47.png" }
+  ];
+
+ 
+  for (let i = 0; i < emptyLogos.length; i++) {
+    logosArray.push({ ...emptyLogos[i], slotId: `logo_empty_${i+1}` });
+  }
+
+  // ---------- ANIMATED GIFS (5 original + 3 empty slots) ----------
+  let animatedArray = [
+    { title: "LEECHER BANNED", category: "animated sig · 4K", imgSrc: "https://i.ibb.co/TMb7GLQF/Animation.gif" },
+    { title: "SERVICE SIGNATURE", category: "motion brand", imgSrc: "https://i.ibb.co/GQfwzDc2/Animation.gif" },
+    { title: "PROXY BANNER", category: "animated banner", imgSrc: "https://i.ibb.co/jkNypvNw/AZy72-Vtam9i-Rcw-QL46b8-A-AZy72-Vta-p-FKAubm0-EZZ2g-ezgif-com-video-to-gif-converter.gif" },
+    { title: "CHODESIGN", category: "glow loop", imgSrc: "https://i.ibb.co/VYmL6fYn/animation.gif" },
+    { title: "PORNLEAKS BUSINESS", category: "SIGNATURE", imgSrc: "https://i.ibb.co/21D0z6NG/BEST-PORN-LEAKS-1.gif" }
+  ];
+
+  // ★★★★★ 3 EMPTY GIF SLOTS — paste your animated GIF links directly below ★★★★★
+  const emptyGifs = [
+    { title: "🎬 EXORA BUSINESS", category: "SIGNATURE", imgSrc: "https://i.ibb.co/ynJLQHrD/exorahost-com.gif" },
+    { title: "🎬 ODESA BUSINESS", category: "SIGNATURE", imgSrc: "https://i.ibb.co/391cFxj8/Lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore.gif" },
+    { title: "SPIDERMAN BUSINESS", category: "SIGNATURE", imgSrc: "https://i.ibb.co/zTdKCNnP/Fire-4-1.gif" }
+  ];
+
+  for (let i = 0; i < emptyGifs.length; i++) {
+    animatedArray.push({ ...emptyGifs[i], slotId: `gif_empty_${i+1}` });
+  }
+
+  // ========== RENDER ENGINE with EYE-CATCHING DETAILS ==========
+  let currentMode = "logos"; // 'logos' or 'signatures'
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+
+  function renderGallery(items, isAnimated = false) {
+    const container = document.getElementById('galleryContainer');
+    if (!container) return;
+    let html = '';
+    for (let idx = 0; idx < items.length; idx++) {
+      const item = items[idx];
+      if (item.isEmpty === true) {
+        // elegant empty slot design (ready for direct code paste)
+        html += `
+          <div class="portfolio-card empty-slot" data-slot-type="${isAnimated ? 'gif' : 'logo'}">
+            <div class="card-media">
+              <div class="empty-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+              <p>✧ ready for your design ✧</p>
+              <div class="empty-badge">paste image/GIF url in code</div>
+            </div>
+            <div class="card-info">
+              <h3>${escapeHtml(item.title)}</h3>
+              <span class="card-category"><i class="far fa-hourglass-half"></i> ${escapeHtml(item.category)}</span>
+            </div>
+          </div>
+        `;
+      } else {
+        let imgSrc = item.imgSrc;
+        let fallbackPlaceholder = item.fallback ? item.fallback : `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%231c1814'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23c9a03d' font-family='Inter' font-size='14'%3E${encodeURIComponent(item.title)}%3C/text%3E%3C/svg%3E`;
+        html += `
+          <div class="portfolio-card">
+            <div class="card-media">
+              <img src="${imgSrc}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackPlaceholder}';">
+            </div>
+            <div class="card-info">
+              <h3>${escapeHtml(item.title)}</h3>
+              <span class="card-category">${escapeHtml(item.category)} ${isAnimated ? '<i class="fas fa-play" style="font-size:0.6rem;"></i> GIF' : ''}</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+    container.innerHTML = html;
+  }
+
+  function updateUI() {
+    const titleEl = document.getElementById('sectionTitle');
+    const counterEl = document.getElementById('slotCounter');
+    if (currentMode === 'logos') {
+      const totalLogos = logosArray.length;
+      const filledLogos = logosArray.filter(item => !item.isEmpty).length;
+      const emptyLogosCount = logosArray.filter(item => item.isEmpty === true).length;
+      titleEl.innerHTML = '<i class="fas fa-crown"></i> Logo Collection · Gilded Emblems';
+      counterEl.innerHTML = `<i class="fas fa-images"></i> ${filledLogos} filled · ${emptyLogosCount} ready slots`;
+      renderGallery(logosArray, false);
+    } else {
+      const totalGifs = animatedArray.length;
+      const filledGifs = animatedArray.filter(item => !item.isEmpty).length;
+      const emptyGifsCount = animatedArray.filter(item => item.isEmpty === true).length;
+      titleEl.innerHTML = '<i class="fas fa-gem"></i> Animated Signatures · Motion Elegance';
+      counterEl.innerHTML = `<i class="fas fa-film"></i> ${filledGifs} signatures · ${emptyGifsCount} empty slots`;
+      renderGallery(animatedArray, true);
+    }
+  }
+
+  // navigation listeners
+  document.getElementById('btnLogos').addEventListener('click', () => {
+    currentMode = 'logos';
+    document.getElementById('btnLogos').classList.add('active');
+    document.getElementById('btnSignatures').classList.remove('active');
+    updateUI();
+  });
+  document.getElementById('btnSignatures').addEventListener('click', () => {
+    currentMode = 'signatures';
+    document.getElementById('btnSignatures').classList.add('active');
+    document.getElementById('btnLogos').classList.remove('active');
+    updateUI();
+  });
+
+  // initial render
+  updateUI();
+
+  // Additional eye-candy: gold dust hover effect, already styled.
+  // For easier code pasting: all empty slots are clearly marked.
+  // Just edit logosArray / animatedArray and replace imgSrc for empty slots.
+</script>
 </body>
 </html>
